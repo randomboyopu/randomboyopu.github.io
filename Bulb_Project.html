@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Project</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(189, 184, 184);
+            
+        }
+        h1{
+            color: rgb(180, 148, 4);
+            width: 100%;
+            text-align: center;            
+        }
+        .cont{
+            
+            width: 350px;
+            margin: auto;
+            border: 1px solid black;
+            background-color: cornflowerblue;
+            
+        }
+        button{
+            display: inline-block;
+            width: 100px;
+            margin: 6.5px;
+            color: green;
+            font-weight: bold;
+            font-size: 14.5px;
+            
+        }
+        button:hover{
+            background-color: darkgray;
+            color: red;
+        }
+        .bulbcon{
+            margin: auto;
+            margin-top: 20px;
+            width: 230px;
+            
+        }
+        img{
+            
+            width: 230px;
+        }
+    </style>
+</head>
+<body>
+    
+        <h1>BULB</h1>
+        <div class="cont">
+            <button onclick="turnOn()">Turn On</button>
+            <button onclick="turnOff()">Turn Off</button>
+            <button id="bt" onclick="OnOff()">On</button>
+        </div>
+        <div class="bulbcon">
+            <img id="bulb" src="Off_bulb.PNG">
+        </div>
+        <script>
+            const turnOn=()=>{
+                let ob=document.getElementById("bulb")
+                //console.log(ob.getAttribute("src"))
+                ob.setAttribute("src","On_bulb.PNG")
+            }
+            const turnOff=()=>{
+                let ob=document.getElementById("bulb")
+                //console.log(ob.getAttribute("src"))
+                ob.setAttribute("src","Off_bulb.PNG")
+            }
+            const OnOff=()=>{
+                let ob=document.getElementById("bt")
+                //console.log(ob.innerHTML)
+                if(ob.innerHTML=='On'){
+                ob.innerHTML="Off"
+                turnOn()
+                }
+                else{
+                    ob.innerHTML="On"
+                    turnOff()
+                }
+            }
+        </script>
+
+</body>
+</html>
